@@ -3,7 +3,7 @@
 
 🇬🇧 [English version](README.md)
 
-Horecentemente completato un Master Intensivo in **Cyber Security & Ethical Hacking** e cerco il mio primo ruolo come **SOC Analyst / Junior Security Analyst**. Qui trovi i miei laboratori personali, i progetti di gruppo (Buildweek) e gli esercizi del percorso.
+Ho recentemente completato un Master Intensivo in **Cyber Security & Ethical Hacking** e cerco il mio primo ruolo come **SOC Analyst / Junior Security Analyst**. Qui trovi i miei laboratori personali, i progetti di gruppo (Buildweek) e gli esercizi del percorso.
 
 📫 **Contatti:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/)
 
