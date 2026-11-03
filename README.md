@@ -5,7 +5,7 @@
 
 I recently completed an Intensive Professional Master Program in **Cyber Security & Ethical Hacking** and looking for my first role as a **SOC Analyst / Junior Security Analyst**. Here you'll find my personal labs, team projects (Buildweeks) and coursework exercises.
 
-📫 **Contact:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/) · [alessio.lacava@outlook.it](mailto:alessio.lacava@outlook.it)
+📫 **Contact:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/)
 
 ---
 
