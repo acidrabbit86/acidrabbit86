@@ -1,57 +1,83 @@
-## 🚀 Progetti Principali (Buildweek)
+# Hi, I'm Alessio 👋
+### Aspiring SOC Analyst | Cyber Security & Ethical Hacking
 
-| Progetto | Dominio | Tecnologie & Tools | Link |
+🇮🇹 [Versione italiana](README.it.md)
+
+I'm training in **Cyber Security & Ethical Hacking** and looking for my first role as a **SOC Analyst / Junior Security Analyst**. Here you'll find my personal labs, team projects (Buildweeks) and coursework exercises.
+
+📫 **Contact:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/) · [alessio.lacava@outlook.it](mailto:alessio.lacava@outlook.it)
+
+---
+
+## 🔬 Home Labs & Personal Projects
+
+Self-directed projects to deepen my skills in Incident Response, Threat Hunting and Threat Intelligence.
+
+### 🛡️ Mini-SOC Lab (Splunk, Sysmon & OpenSSH)
+An isolated lab to observe Windows endpoint telemetry with **Sysmon** (Event ID 1 for processes, 3 for network connections, 13 for registry changes), forwarded to **Splunk Enterprise** via **Universal Forwarder** (port 9997). For each scenario I simulated the attack and wrote the detection rule:
+
+1. **SSH Brute Force:** attack with **Hydra** from Kali Linux against a test user; field extraction from OpenSSH logs using `rex` and a scheduled alert with a cron schedule.
+2. **Suspicious PowerShell:** detection of anomalous command lines (`ExecutionPolicy Bypass`, `DownloadString`) via Sysmon Event ID 1.
+3. **Persistence via Registry Run Key:** monitoring of `CurrentVersion\Run` (Sysmon Event ID 13), mapped to **MITRE ATT&CK T1547.001**.
+
+### 📄 Threat Brief: FortiBleed Campaign
+Analysis of the compromise campaign targeting internet-exposed **Fortinet FortiGate** firewalls and SSL VPN gateways: attack chain (credential stuffing and infostealer dumps, exfiltration of user databases with legacy SHA-256 hashes, offline GPU cracking with Hashcat, administrator account lockout), **MITRE ATT&CK** mapping, detection indicators (anomalous accounts such as `forticloud-sync`, `support_fortinet`, `adminsslvpn`) and mitigations recommended by the FBI and Fortinet (restricting administrative access, disabling legacy hashes, phishing-resistant MFA).
+
+### 🎯 CTI Report: The Gentlemen Ransomware (Storm-2697)
+Threat Intelligence report on the double-extortion RaaS group **The Gentlemen** (ArmCorp): analysis of the Go-based encryptor, the **GentleKiller** EDR-killing framework (BYOVD via vulnerable drivers such as `ThrottleBlood.sys`) and the worm-like lateral movement module. Includes a custom **YARA rule**, IoCs and Active Directory hardening strategies (SYSVOL protection, blocking vulnerable drivers with HVCI/WDAC).
+
+---
+
+## 🚀 Team Projects (Buildweek)
+
+| Project | What I did | Tools | Repo |
 | :--- | :--- | :--- | :--- |
-| **Buildweek 1** | Network Architecture & Perimeter Defense | Cisco Packet Tracer, pfSense, IDS/IPS, Python | [Vedi Repo](./Epicode---Buildweek-1) |
-| **Buildweek 2** | Penetration Testing & Vulnerability Assessment | Metasploit, SQLi, XSS, LLM Exploit, CTF | [Vedi Repo](./Epicode---Buildweek-2) |
-| **Buildweek 3** | SOC Analysis, Incident Response & Forensics | Security Onion, Kibana, Wireshark, Splunk | [Vedi Repo](./Epicode---Buildweek-3) |
+| **Buildweek 1**<br>Network Architecture & Perimeter Defense | Designed a 6-floor corporate network (120 hosts) with per-floor segmentation, a DMZ for critical services and a perimeter firewall with 3 IDS/IPS modules | Cisco Packet Tracer, pfSense, Python | [View repo](https://github.com/acidrabbit86/Epicode---Buildweek-1) |
+| **Buildweek 2**<br>Penetration Testing & Vulnerability Assessment | Web exploitation (SQLi, XSS), attacks on LLMs (prompt injection), infrastructure exploitation on Linux and Windows targets, 3 CTF challenges | Metasploit, SQLi, XSS, CTF | [View repo](https://github.com/acidrabbit86/Epicode---Buildweek-2) |
+| **Buildweek 3**<br>SOC Analysis, Incident Response & Forensics | Malware analysis in sandbox, PCAP forensics, threat hunting (SQLi, DNS exfiltration, unauthorized `root` access, data theft via FTP) and SPL queries for SSH brute force | Security Onion, Kibana, Sguil, Wireshark, Splunk, ANY.RUN | [View repo](https://github.com/acidrabbit86/Epicode---Buildweek-3) |
 
 ---
 
-## 📑 Dettaglio delle Buildweek
+## 🛠️ Tech Stack
 
-### 🏢 Buildweek 1: Progettazione e Definizioni di Rete Aziendale
-Progettazione e testing dell'infrastruttura di rete per un edificio aziendale su 6 piani (120 host totali):
-* **Architettura:** Segregazione di rete, segmentazione per piano (20 PC per piano) e zona DMZ per servizi critici (Web Server DVWA/Metasploitable e NAS centralizzato).
-* **Sicurezza Perimetrale:** Configurazione di Firewall perimetrale integrato con 3 moduli IDS/IPS per il monitoraggio attivo del traffico.
-* **Validazione:** Modellazione logica con Cisco Packet Tracer, verifica del traffico a basso livello tramite script Python e simulazione in ambiente reale con pfSense.
-
-### ⚔️ Buildweek 2: Web & Infrastructure Exploitation + CTF
-Attività pratiche di Penetration Testing e risoluzione di sfide CTF:
-* **Web Application Exploitation:** Identificazione e sfruttamento di vulnerabilità SQL Injection (SQLi) e Cross-Site Scripting (XSS).
-* **Adversarial AI:** Tecniche di exploit applicate a modelli di linguaggio (LLM Exploitation / Prompt Injection).
-* **Infrastructure Exploitation:** Testing di vulnerabilità di sistema con Metasploit su macchine target Linux (Metasploitable) e Windows.
-* **Capture The Flag (CTF):** Risoluzione di 3 sfide pratiche CTF focalizzate su escalation di privilegi e vulnerabilità web.
-
-### 🛡️ Buildweek 3: SOC Analysis, Malware Forensics & Threat Hunting
-Progetto multidisciplinare focalizzato sul monitoraggio, analisi dei log e risposta agli incidenti:
-* **Malware Analysis & Sandbox:** Static/Dynamic Analysis di campioni malware (AdwCleaner, Any.run Sandbox) e stesura di report di remediation per il management.
-* **Network & PCAP Forensics:** Analisi del traffico di rete (HTTP/HTTPS) tramite `tcpdump` e `Wireshark`, ricostruzione di flussi TCP ed estrazione di payload eseguibili malevoli (es. Nimda) da catture pcap.
-* **Threat Hunting & SIEM (Security Onion & Kibana):** 
-  * Investigazione di attacchi SQL Injection ed esfiltrazione dati nascosta tramite sottodomini DNS esadecimali.
-  * Isolamento di host compromessi tramite 5-Tupla (Sguil & Kibana), rilevamento di accessi `root` non autorizzati e furto di dati via FTP.
-* **SIEM Log Analysis (Splunk):** Creazione di query SPL per identificare tentativi di attacco Brute Force SSH, errori del server interno e analisi comportamentale degli utenti.
-* **Laboratori Avanzati:** Analisi del codice sorgente di malware storici (Mydoom) e studio teorico/pratico delle dinamiche di Buffer Overflow (gestione stack x86, EIP/ESP, badchars e meccanismi RCE).
+- **Systems & VMs:** Kali Linux, FLARE-VM, Security Onion, Windows Server 2022, Windows 10, pfSense, Cisco CyberOps Workstation
+- **SIEM & Monitoring:** Splunk Enterprise (SPL), Kibana, Sguil, Sysmon, Event Viewer
+- **Network & Forensics:** Wireshark, tcpdump, ProcMon, FakeNet-NG, HashMyFiles, Cisco Packet Tracer
+- **Malware Analysis:** ANY.RUN, VirusTotal
+- **Pentesting:** Metasploit, Nmap, Masscan, Nessus, Hydra
+- **Cracking & Reverse Engineering:** Hashcat, John the Ripper, CrackStation, Immunity Debugger, Mona.py
+- **Active Directory:** AD DS, GPO, NTFS ACLs
+- **Languages:** Python (including Google Gemini API), Bash, PowerShell, SQL, SPL, YARA
 
 ---
 
-## 🛠️ Tech Stack & Strumenti
-* **Sistemi Operativi:** Kali Linux, Security Onion, Windows, pfSense
-* **Networking & Monitoring:** Wireshark, tcpdump, Cisco Packet Tracer, Netstat, Telnet
-* **SIEM & Analytics:** Kibana, Sguil, Splunk
-* **Pentesting & Exploitation:** Metasploit, Nmap, SQLi, XSS, Mona.py, Immunity Debugger
-* **Linguaggi:** Python, Bash, SQL, SPL
-<!--
-**acidrabbit86/acidrabbit86** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 📚 Exercises by Course Unit
 
-Here are some ideas to get you started:
+All weekly labs are in the **[EpicodeCyberSec-Esercizi](https://github.com/acidrabbit86/EpicodeCyberSec-Esercizi)** repository (documents are in Italian).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<details>
+<summary><b>🔷 UNIT 1: Network Fundamentals, Programming & Security</b></summary>
+
+- **W1 · Network Design:** SME network across 3 floors with 4 dedicated VLANs.
+- **W2 · Python & AI:** Cyber Security virtual assistant using the Google Gemini API (`Agent_AI_Prova.py`).
+- **W3 · Network Security:** advanced firewall rules and traffic inspection.
+- **W4:** corresponds to Buildweek 1.
+</details>
+
+<details>
+<summary><b>🔶 UNIT 2: Penetration Testing, Vulnerability Assessment & Exploitation</b></summary>
+
+- **W5 · Reconnaissance:** port scanning and vulnerability assessment with Nmap and Nessus on Metasploitable.
+- **W6 · Web Security:** XSS and SQLi on DVWA, dictionary attacks with Hydra on SSH/FTP, full blackbox penetration test.
+- **W7 · Exploitation:** Metasploit (Java RMI, Vsftpd backdoor) and Meterpreter payloads on Windows 10.
+- **W8:** corresponds to Buildweek 2.
+</details>
+
+<details>
+<summary><b>🛡️ UNIT 3: Malware Analysis, Digital Forensics & Incident Response</b></summary>
+
+- **W9 · Malware & Forensics:** FLARE-VM, static/dynamic analysis (WarzoneRAT, Trojan/Rozena, WannaCry) and a Network Forensics Report on a TCP SYN port scan.
+- **W10 · Linux, Splunk & Active Directory:** DAC permissions on Linux, log indexing in Splunk, an Active Directory domain on Windows Server 2022 with OUs, NTFS ACLs and GPO hardening.
+- **W11 · Protocols, Sandbox & Database Forensics:** TCP 3-way handshake and DNS in Wireshark, PowerShell threat hunting, infection chain in ANY.RUN and PCAP forensics of a SQL Injection attack on MySQL. [View the weekly project](https://github.com/acidrabbit86/EpicodeCyberSec-Esercizi/blob/4d61d9c372e47a066e2dec23806f59c41b529a1d/UNIT_3/S11/L5-weekly/Progetto%20Settimanale%20S11L5.pdf)
+- **W12:** corresponds to Buildweek 3.
+</details>
