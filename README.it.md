@@ -1,11 +1,11 @@
 # Ciao, sono Alessio 👋
-### Aspiring SOC Analyst | Cyber Security & Ethical Hacking
+### Aspiring SOC Analyst | Cyber Security Analyst
 
 🇬🇧 [English version](README.md)
 
-Mi sto formando in **Cyber Security & Ethical Hacking** e cerco il mio primo ruolo come **SOC Analyst / Junior Security Analyst**. Qui trovi i miei laboratori personali, i progetti di gruppo (Buildweek) e gli esercizi del percorso.
+Horecentemente completato un Master Intensivo in **Cyber Security & Ethical Hacking** e cerco il mio primo ruolo come **SOC Analyst / Junior Security Analyst**. Qui trovi i miei laboratori personali, i progetti di gruppo (Buildweek) e gli esercizi del percorso.
 
-📫 **Contatti:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/) · [alessio.lacava@outlook.it](mailto:alessio.lacava@outlook.it)
+📫 **Contatti:** [LinkedIn](https://www.linkedin.com/in/alessio-lacava/)
 
 ---
 
